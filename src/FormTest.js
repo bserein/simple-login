@@ -1,8 +1,13 @@
-import { useState } from "react";
+import {/* useState,*/ useContext } from "react";
+//dont need the usestate anymore since you are using the context
+import { UserContext } from "./App";
+
 
 
 function FormTest() {
-const [firstName, setFirstName] = useState(''); // 1. set up state
+// const [firstName, setFirstName] = useState(''); // 1. set up state
+//you take the useState from here and you put it in the App
+const {firstName, setFirstName} = useContext(UserContext);
 
 const handleFirstName = (event) => {
   setFirstName(event.target.value)
